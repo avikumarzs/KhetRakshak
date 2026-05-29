@@ -1,8 +1,8 @@
-# 🐛 PestAI: Contextual Edge-AI for Crop Protection
+# 🐛 KhetRakshak: Contextual Edge-AI for Crop Protection
 
 Farmers lose billions of dollars to crop pests every year, but identifying the exact species before the infestation spreads is incredibly difficult. Most farmers don't have entomologists on speed dial, and spraying chemicals at the wrong time leads to environmental damage and financial loss.
 
-**PestAI** is a real-time, edge-computing mobile tool that puts an agricultural expert in the farmer's pocket. It combines on-device machine learning with dynamic weather heuristics to not only detect pests but also advise on the exact right time to treat the crop.
+**KhetRakshak** is a real-time, edge-computing mobile tool that puts an agricultural expert in the farmer's pocket. It combines on-device machine learning with dynamic weather heuristics to not only detect pests but also advise on the exact right time to treat the crop.
 
 ---
 
@@ -38,7 +38,7 @@ We didn't just wrap a model in an app; we engineered a production-grade, context
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository:**
-    git clone https://github.com/YOUR_USERNAME/PestAI.git
+    git clone https://github.com/YOUR_USERNAME/KhetRakshak.git
 
 2. **Open in Android Studio:** Ensure you have the latest stable version installed.
 
