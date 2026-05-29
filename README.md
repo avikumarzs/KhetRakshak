@@ -1,48 +1,88 @@
-# 🐛 KhetRakshak: Contextual Edge-AI for Crop Protection
+🚜 KhetRakshak: Contextual Edge-AI & Autonomous Rover for Crop Protection
+Farmers lose billions of dollars to crop pests every year, but identifying the exact species before the infestation spreads is incredibly difficult. Spraying chemicals blindly leads to severe environmental damage, pesticide runoff, and massive financial loss.
 
-Farmers lose billions of dollars to crop pests every year, but identifying the exact species before the infestation spreads is incredibly difficult. Most farmers don't have entomologists on speed dial, and spraying chemicals at the wrong time leads to environmental damage and financial loss.
+KhetRakshak (formerly PestAI) is a complete agricultural ecosystem that solves this. It combines a scratch-built autonomous rover for field patrolling with a real-time, edge-computing mobile app. Powered by on-device Machine Learning (YOLOv11 Nano) and dynamic weather heuristics, it acts as an entomologist in the farmer's pocket—detecting pests, recommending treatments, and advising on the exact right time to spray.
 
-**KhetRakshak** is a real-time, edge-computing mobile tool that puts an agricultural expert in the farmer's pocket. It combines on-device machine learning with dynamic weather heuristics to not only detect pests but also advise on the exact right time to treat the crop.
+📑 Table of Contents
+Core Ecosystem Features
 
----
+Advanced AI/ML Architecture
 
-## ✨ Spray Viability Decision Engine
-* **Contextual Weather Warnings:** Issues a "Do Not Spray" warning if rain, high wind, or extreme temperatures are detected, preventing chemical runoff and saving farmers money.
-* **Dynamic Location Services:** Automatically requests the user's location to provide hyper-local, accurate weather data for spray recommendations.
-* **Live Weather Dashboard:** The home screen displays the current location, temperature, and wind speed, giving farmers a complete picture of the environmental conditions before treating crops.
+The Hardware: Autonomous Rover
 
----
+Tech Stack & Architecture
 
-## 🧠 Advanced AI/ML Architecture
-We didn't just wrap a model in an app; we engineered a production-grade, context-aware pipeline optimized for low-end mobile hardware.
+Installation & Setup
 
-* **Active Learning Feedback Loop:** Users can tap on an incorrect bounding box to instantly hide it. The AI adds that coordinate to a "penalized zone" for the rest of the session, preventing the same false-positive from recurring.
-* **Context-Aware Habitat Filter:** An intelligent heuristic filter that probes the pixels immediately outside a bounding box. If the background isn't mathematically detected as green leaves or brown soil, the model's confidence is dynamically penalized to reduce false positives on unnatural surfaces.
-* **Anti-Flicker Engine:** A custom 3-frame memory grace period integrated into the Non-Maximum Suppression (NMS) logic that prevents bounding boxes from blinking in and out of existence during camera shake, providing a highly stable user experience.
-* **Zero-Distortion Cropping:** Prevents 16:9 camera feeds from being squashed into 1:1 AI tensors, preserving real-world geometry for higher inference accuracy.
+Future Scope
 
----
+Acknowledgments
 
-## 🛠️ Tech Stack
-* **Language:** Kotlin
-* **Machine Learning:** TensorFlow Lite (YOLOv11 Nano)
-* **Networking:** Retrofit and Gson for communicating with the OpenWeatherMap API.
-* **Asynchronous Operations:** Kotlin Coroutines and `lifecycleScope` for managing background tasks and API calls without blocking the UI thread.
-* **Camera:** AndroidX CameraX for a modern, lifecycle-aware edge-computing camera implementation.
-* **Location:** Google Play Services Fused Location Provider API.
-* **UI Framework:** Modern Android UI with Material Design components, ConstraintLayout, and CoordinatorLayout.
-* **Architecture:** Single-Activity architecture using the AndroidX Navigation Component with Fragments.
+✨ Core Ecosystem Features
+🌦️ Spray Viability Decision Engine
+Contextual Weather Warnings: Issues a strict "Do Not Spray" warning if rain, high wind, or extreme temperatures are detected via the OpenWeatherMap API, preventing chemical runoff.
 
----
+Dynamic Location Services: Automatically requests location via the Fused Location Provider to fetch hyper-local, accurate weather data.
 
-## ⚙️ Installation & Setup
+Live Agricultural Dashboard: The home screen provides a comprehensive environmental overview—displaying current location, temperature, wind speed, and farm status before any treatment is applied.
 
-1. **Clone the repository:**
-    git clone https://github.com/YOUR_USERNAME/KhetRakshak.git
+💊 Remedies & Actionable Insights
+Dedicated Remedies Screen: Once a pest is identified, the app doesn't just leave the user hanging. It navigates to a dedicated UI offering organic and chemical treatment recommendations tailored to the specific infestation.
 
-2. **Open in Android Studio:** Ensure you have the latest stable version installed.
+🧠 Advanced AI/ML Architecture
+We didn't just wrap a model in an app; we engineered a production-grade, context-aware pipeline optimized for low-end mobile hardware without relying on cloud processing.
 
-3. **Add your API Key:** * Obtain a free API key from OpenWeatherMap.
-    * Place your key securely in your project.
+Context-Aware Habitat Filter: An intelligent heuristic filter that probes the pixels immediately outside a bounding box. If the background isn't mathematically detected as green leaves or brown soil, the model's confidence is dynamically penalized to drastically reduce false positives on unnatural surfaces.
 
-4. **Build and Run:** Connect a physical Android device via USB debugging for the best camera and ML performance.
+Anti-Flicker Engine: A custom 3-frame memory grace period integrated into the Non-Maximum Suppression (NMS) logic. This prevents bounding boxes from blinking in and out of existence during camera shake, providing a highly stable UX.
+
+Active Learning Feedback Loop: Users can tap on an incorrect bounding box to instantly hide it. The AI adds that coordinate to a "penalized zone" for the rest of the session, preventing the same false-positive from recurring.
+
+Zero-Distortion Cropping: Prevents 16:9 camera feeds from being squashed into 1:1 AI tensors, preserving real-world geometry for higher YOLOv11 inference accuracy.
+
+🤖 The Hardware: Autonomous Rover
+KhetRakshak extends beyond the smartphone screen. The app is designed to pair seamlessly with our scratch-built, autonomous agricultural rover.
+
+Field Patrolling: The rover navigates the farm, allowing the KhetRakshak mobile system to scan vast areas of crops continuously without manual human labor.
+
+Hardware-Software Synergy: The Kotlin app acts as the brain and interface, processing the visual data captured during the rover's patrol routes.
+
+🛠️ Tech Stack & Architecture
+We recently refactored the entire Android application to adhere to modern development standards, ensuring high scalability and zero memory leaks during camera operations.
+
+Language: Kotlin
+
+Architecture Pattern: MVVM (Model-View-ViewModel) paired with a Single-Activity architecture using the AndroidX Navigation Component and Fragments.
+
+Machine Learning: TensorFlow Lite (custom-trained YOLOv11 Nano).
+
+Asynchronous Operations: Kotlin Coroutines and lifecycleScope for thread-safe background API calls.
+
+Camera Edge-Computing: AndroidX CameraX for a lifecycle-aware camera implementation that survives screen rotations gracefully.
+
+Networking: Retrofit and Gson for API communication.
+
+UI Framework: Material Design 3, ConstraintLayout, and CoordinatorLayout.
+
+⚙️ Installation & Setup
+Clone the repository:
+
+Bash
+git clone https://github.com/YOUR_USERNAME/KhetRakshak.git
+Open in Android Studio: Ensure you have the latest stable version (Iguana/Jellyfish or newer) installed.
+
+Configure API Keys: * Obtain a free API key from OpenWeatherMap.
+
+Do not hardcode the key. Place it securely in your local.properties file:
+
+Properties
+WEATHER_API_KEY="your_api_key_here"
+Build and Run: Connect a physical Android device via USB debugging. Note: Emulators are not recommended as they cannot simulate the hardware acceleration required for real-time CameraX AI inference.
+
+🚀 Future Scope
+Rover Telemetry Integration: Building a direct local communication pipeline (MQTT/Bluetooth) to view rover battery life and manual override controls directly in the Android dashboard.
+
+Multi-Language Support: Translating the Remedies Screen into regional languages to increase accessibility for local farmers.
+
+🏆 Acknowledgments
+This project was conceptualized and scratch-built by Team Symbiotee during the InnovateYou Hackathon organized by AISSMS College of Engineering, where it successfully reached the Final Round out of 450 participating teams.
