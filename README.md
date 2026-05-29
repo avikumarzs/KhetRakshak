@@ -1,36 +1,34 @@
-# 🚜 KhetRakshak
-### Contextual Edge-AI & Autonomous Rover for Crop Protection
+# 🌱 KhetRakshak
+### Contextual Edge-AI for Crop Protection
 
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg?logo=kotlin)
 ![TensorFlow Lite](https://img.shields.io/badge/TensorFlow%20Lite-YOLOv11_Nano-FF6F00.svg?logo=tensorflow)
 ![Architecture](https://img.shields.io/badge/Architecture-MVVM-success)
-![Hardware](https://img.shields.io/badge/Hardware-Custom_Rover-lightgrey)
 
 > **The Problem:** Farmers lose billions of dollars to crop pests every year, but identifying the exact species before the infestation spreads is incredibly difficult. Spraying chemicals blindly leads to severe environmental damage, pesticide runoff, and massive financial loss. 
 >
-> **The Solution:** **KhetRakshak** (formerly PestAI) is a complete agricultural ecosystem. It combines a scratch-built autonomous rover for field patrolling with a real-time, edge-computing mobile app. Powered by on-device Machine Learning (YOLOv11 Nano) and dynamic weather heuristics, it acts as an entomologist in the farmer's pocket—detecting pests, recommending treatments, and advising on the exact right time to spray.
+> **The Solution:** **KhetRakshak** (formerly PestAI) is a complete software-based agricultural ecosystem. It is a real-time, edge-computing mobile application that democratizes expert entomology. Powered by on-device Machine Learning (YOLOv11 Nano) and dynamic weather heuristics, it acts as an agricultural expert in the farmer's pocket—detecting pests directly through the smartphone camera, recommending treatments, and advising on the exact environmental window to spray.
 
 ---
 
 ## 📑 Table of Contents
-1. [Core Ecosystem Features](#-core-ecosystem-features)
+1. [Core Application Features](#-core-application-features)
 2. [Advanced AI/ML Architecture](#-advanced-aiml-architecture)
-3. [The Hardware: Autonomous Rover](#-the-hardware-autonomous-rover)
-4. [Tech Stack & Architecture](#-tech-stack--architecture)
-5. [Installation & Setup](#-installation--setup)
-6. [Future Scope](#-future-scope)
+3. [Tech Stack & Architecture](#-tech-stack--architecture)
+4. [Installation & Setup](#-installation--setup)
+5. [Future Scope](#-future-scope)
 
 ---
 
-## ✨ Core Ecosystem Features
+## ✨ Core Application Features
 
 ### 🌦️ Spray Viability Decision Engine
 * **Contextual Weather Warnings:** Issues a strict "Do Not Spray" warning if rain, high wind, or extreme temperatures are detected via the OpenWeatherMap API, preventing chemical runoff.
-* **Dynamic Location Services:** Automatically requests location via the Fused Location Provider to fetch hyper-local, accurate weather data.
+* **Dynamic Location Services:** Automatically requests location via the Fused Location Provider to fetch hyper-local, accurate weather data without manual entry.
 * **Live Agricultural Dashboard:** The home screen provides a comprehensive environmental overview—displaying current location, temperature, wind speed, and farm status before any treatment is applied.
 
 ### 💊 Remedies & Actionable Insights
-* **Dedicated Remedies Screen:** Once a pest is identified, the app doesn't just leave the user hanging. It navigates to a dedicated UI offering organic and chemical treatment recommendations tailored to the specific infestation.
+* **Dedicated Remedies Screen:** Once a pest is identified, the app doesn't just leave the user hanging. It instantly navigates to a dedicated UI offering organic and chemical treatment recommendations tailored to the specific infestation.
 
 ---
 
@@ -42,15 +40,6 @@
 * **Anti-Flicker Engine:** A custom 3-frame memory grace period integrated into the Non-Maximum Suppression (NMS) logic. This prevents bounding boxes from blinking in and out of existence during camera shake.
 * **Active Learning Feedback Loop:** Users can tap on an incorrect bounding box to instantly hide it. The AI adds that coordinate to a "penalized zone" for the rest of the session.
 * **Zero-Distortion Cropping:** Prevents 16:9 camera feeds from being squashed into 1:1 AI tensors, preserving real-world geometry for higher YOLOv11 inference accuracy.
-
----
-
-## 🤖 The Hardware: Autonomous Rover
-
-*KhetRakshak extends beyond the smartphone screen. The app is designed to pair seamlessly with our scratch-built, autonomous agricultural rover.*
-
-* **Field Patrolling:** The rover navigates the farm, allowing the mobile system to scan vast areas of crops continuously without manual human labor.
-* **Hardware-Software Synergy:** The Kotlin app acts as the brain and interface, processing the visual data captured during the rover's patrol routes.
 
 ---
 
@@ -93,8 +82,9 @@
 ---
 
 ## 🚀 Future Scope
-* **Rover Telemetry Integration:** Building a direct local communication pipeline (MQTT/Bluetooth) to view rover battery life and manual override controls directly in the Android dashboard.
+* **Community Pest Heatmaps:** Aggregating anonymous detection data to warn neighboring farms of migrating pest swarms.
 * **Multi-Language Support:** Translating the Remedies Screen into regional languages to increase accessibility for local farmers.
+* **Drone Imagery Integration:** Scaling the model to process batch images captured from agricultural drones.
 
 ---
-> **Acknowledgments:** This project was conceptualized and scratch-built by **Team Symbiotee** during the **InnovateYou Hackathon** organized by AISSMS College of Engineering, where it successfully reached the Final Round out of 450 participating teams.
+> **Acknowledgments:** This project was conceptualized and built by **Team Symbiotee** during the **InnovateYou Hackathon** organized by AISSMS College of Engineering, where it successfully reached the Final Round out of 450 participating teams.
